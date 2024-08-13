@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
-import { Navbar } from "./components/Navbar";
+import { Sidebar } from "./components/Sidebar";
 
 const firaCode = Fira_Code({ subsets: ["latin"] });
 
@@ -27,9 +27,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={firaCode.className}>
-        <main className="flex flex-col gap-2 p-8">
-          <Navbar session={session ?? null} />
-          <div className="flex bg-slate-100 rounded-lg h-[calc(100vh-6rem)] p-6">
+        <main className="bg-white flex gap-2 pl-4 py-4">
+          <Sidebar session={session ?? null} />
+          <div className="flex border border-slate-300 bg-slate-50 rounded-l-[1.5rem] w-[calc(100vw-5rem)] h-[calc(100vh-2rem)] p-6 overflow-y-auto">
           {children}
           </div>
         </main>
